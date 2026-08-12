@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 - Page Not Found</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* 404 SECTION */
+.error-section{
+    height:100vh;
+    background:#0b1023;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+}
+
+/* Background Glow */
+.error-section::before{
+    content:"";
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:#f4c909;
+    filter:blur(180px);
+    opacity:0.15;
+    border-radius:50%;
+    top:-100px;
+    right:-100px;
+}
+
+/* Content */
+.error-content h1{
+    font-size:150px;
+    font-weight:800;
+    color:#f4c909;
+    margin-bottom:10px;
+    letter-spacing:5px;
+}
+
+.error-content h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.error-content p{
+    color:#ccc;
+    max-width:500px;
+    margin:0 auto 30px;
+}
+
+/* Button */
+.error-btn{
+    position:relative;
+    display:inline-block;
+    padding:15px 35px;
+    border-radius:50px;
+    background:#ffffff;
+    color:#000;
+    font-weight:600;
+    text-decoration:none;
+    overflow:hidden;
+    z-index:1;
+    transition:0.4s ease;
+}
+
+.error-btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:0%;
+    height:100%;
+    background:#f4c909;
+    z-index:-1;
+    transition:0.4s ease;
+}
+
+.error-btn:hover::before{
+    width:100%;
+}
+
+.error-btn:hover{
+    color:#000;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .error-content h1{
+        font-size:100px;
+    }
+    .error-content h2{
+        font-size:26px;
+    }
+}
+.error-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.error-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px 35px;
+
+    border-radius: 50px;
+
+    background: #ffffff;
+    color: #000;
+
+    font-weight: 600;
+    text-decoration: none;
+
+    overflow: hidden;
+    z-index: 1;
+
+    transition: 0.4s ease;
+}
+
+.error-btn::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0%;
+    height: 100%;
+
+    background: #f4c909;
+
+    z-index: -1;
+
+    transition: 0.4s ease;
+}
+
+.error-btn:hover::before {
+    width: 100%;
+}
+
+.error-btn:hover {
+    color: #000;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .error-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .error-btn {
+        width: 200px;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<section class="error-section">
+    <div class="error-content animate-scale">
+        <h1>404</h1>
+        <h2>Oops! Page Not Found</h2>
+        <p>
+            The page you're looking for doesn’t exist or has been moved.
+            Let’s get you back to building something great.
+        </p>
+        <div class="error-buttons">
+
+    <!-- Back to Previous Page -->
+    <a href="javascript:history.back()" class="error-btn">
+        ← Back
+    </a>
+
+    <!-- Home -->
+    <a href="index.html" class="error-btn">
+        Back To Home ↗
+    </a>
+
+</div>
+    </div>
+</section>
+
+<script>
+/* Scale Animation Trigger */
+const elements = document.querySelectorAll('.animate-scale');
+
+window.addEventListener('load', () => {
+    elements.forEach(el => {
+        el.classList.add('show');
+    });
+});
+</script>
+
+</body>
+</html>
